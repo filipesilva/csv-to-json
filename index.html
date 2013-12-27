@@ -1,25 +1,26 @@
 <!doctype html>
 <html ng-app>
   <head>
+    <title>Regex to JSON</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.min.js"></script>
     <script src="app.js"></script>
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <h2>Todo</h2>
+    <h2>Regex to JSON</h2>
     <div ng-controller="RegexToJsonCtrl">
-      <span>{{remaining()}} of {{todos.length}} remaining</span>
-      [ <a href="" ng-click="archive()">archive</a> ]
-      <ul class="unstyled">
-        <li ng-repeat="todo in todos">
-          <input type="checkbox" ng-model="todo.done">
-          <span class="done-{{todo.done}}">{{todo.text}}</span>
-        </li>
-      </ul>
-      <form ng-submit="addTodo()">
-        <input type="text" ng-model="todoText"  size="30"
-               placeholder="add new todo here">
-        <input class="btn-primary" type="submit" value="add">
+      <form ng-submit="parse()">
+        <input type="text" ng-model="regex"  size="140"
+               placeholder="Put regex here"/>
+        <input class="btn-primary" type="submit" value="Parse">
+        <br/>
+        <textarea data-ng-model="source" id="source" cols="120" rows="20"
+                  placeholder="Paste source data here">
+        </textarea>
+        <br/>
+        <textarea data-ng-model="destination" id="destination" cols="120"
+                  rows="20" placeholder="Parsed data will appear here">
+        </textarea>
       </form>
     </div>
   </body>
