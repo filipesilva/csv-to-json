@@ -1,3 +1,8 @@
 textarea {
     resize: none;
 }
+
+input[type="text"] {
+    font-family: monospace;
+}
+

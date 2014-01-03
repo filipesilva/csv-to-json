@@ -1,4 +1,4 @@
-regextojson
+csvtojson
 ===========
 
-A simple webapp to convert data formats using regex
+A simple angular webapp to convert csv to json
